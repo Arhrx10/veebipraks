@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prügi sorteerimise rakendus – Otsing</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Otsi eset</h1>
+    <p>Siin saad sisestada eseme nime, et teada, kuidas seda sorteerida.</p>
+
+    <form id="searchForm">
+      <label for="item">Sisesta ese:</label>
+      <input
+        type="text"
+        id="item"
+        name="item"
+        placeholder="nt piimapakk"
+        required
+      />
+      <button type="submit">Otsi</button>
+    </form>
+
+    <nav>
+      <a href="index.html">Tagasi avalehele</a>
+    </nav>
+
+    <script>
+      document
+        .getElementById("searchForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const item = document.getElementById("item").value.trim();
+          if (item !== "") {
+            window.location.href = "result.html";
+          } else {
+            alert("Palun sisesta ese!");
+          }
+        });
+    </script>
+  </body>
+</html>
