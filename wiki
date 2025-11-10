@@ -29,7 +29,6 @@
 * **Kokku arvestatud ajakulu:** Summa 30 tundi rühma liikme kohta.
 
 | Vastutusala või Funktsionaalsus | Tähtaeg või Kuupäev | Ajakulu (h) | Vastutav Rühma Liige |
-| :--- | :--- | :--- | :--- |
 | Rühmasisene infovahetus | 01.11 | 5 min | Kõik |
 | Plaani esitamine | 01.11 | 1 h | Kõik |
 | **Githubi Koodi loomine** | **16.10** | **-** | **Andreas** |
