@@ -1,0 +1,68 @@
+# Projekt: Prügi Sorteerimine
+
+**Rühm:** Alust
+
+##Projekti Ülevaade
+
+| Detail | Kirjeldus |
+| :--- | :--- |
+| **Rühma nimi** | Alust |
+| **Teema** | Prügi Sorteerimine |
+| **Eesmärk** | Aidata inimestel sorteerida prügi, pakkudes juhiseid vastavalt nende olemasolevatele konteineritele. |
+
+---
+
+## Veebilehe Ülesehitus
+
+1.  **Leht 1: Seadistamine**
+    * Kasutaja märgib, millised **prügikonteinerid** (olmeprügi, biojäätmed, paber/papp jne) tal kodus on.
+2.  **Leht 2: Sorteerimise Abimees**
+    * Kasutaja sisestab/otsib prügi liigi (nt "jogurtitops").
+    * Tulemused filtreeritakse vastavalt Lehel 1 tehtud valikutele.
+3.  **Leht 3: Tänusõnad ja Faktid**
+    * Positiivne sõnum ja faktid prügi/keskkonna kohta.
+
+---
+
+## Tööplaan ja Ajakava
+
+* **Kokku arvestatud ajakulu:** Summa 30 tundi rühma liikme kohta.
+
+| Vastutusala või Funktsionaalsus | Tähtaeg või Kuupäev | Ajakulu (h) | Vastutav Rühma Liige |
+| :--- | :--- | :--- | :--- |
+| Rühmasisene infovahetus | 01.11 | 5 min | Kõik |
+| Plaani esitamine | 01.11 | 1 h | Kõik |
+| **Githubi Koodi loomine** | **16.10** | **-** | **Andreas** |
+| Figma prototüüp + piltide/ikoonide leidmine | 09.11 | 3 h | Kõik |
+| Veebilehe struktuuri planeerimine | 09.11 | 1 h | Andreas |
+| Koosolekud | iga nädal | 4 h | Kõik |
+| **HTML/CSS/JS koodi valmimine** | **23.11** | **10 h** | HTML-Andreas, CSS-Rickie, JS-Orm (aktiivne panus kõigilt) |
+| Üleüldine lihvimine | 30.11 | 4 h | Kõik |
+| Esitluse tegemine ja kuupäeva valimine | 03.12 | 1 h | Kõik |
+
+---
+
+## 🤝 Rühmatöö Kokkulepped ja Käitumisnormid
+
+### 1. Pühendumine ja Ajakavad
+
+* **Peamine norm:** Peame **tähtaegadest kinni**.
+* **Probleemide ennetamine:** Kui tähtaeg ähvardab kukkuda, anname sellest **vähemalt 24 tundi ette** teada, selgitame takistust ja pakume kohe uue realistliku lahenduse.
+
+### 2. Koostöö ja Kommunikatsioon
+
+* **Kanalid:** Kasutame peamise suhtluskanalina [Lisa suhtluskanal, nt Discord/Slack].
+* **Koosolekud:** Regulaarsed koosolekud toimuvad igal nädalal **kindla tegevuskavaga** ja **protokolliga**.
+
+### 3. Koodi Kvaliteet
+
+* **Git Flow:** Enne koodi ühendamist (`merge`) peab keegi teine (peale autori) tegema **Code Review** ehk koodi üle vaatama.
+* **Branchimine:** Kasutame selgeid harunimesid (nt `feature/login-leht`). `Main`/`master` haru peab alati olema **töötav**.
+
+### 4. Kui Rühmaliige Ei Osaie Töös
+
+* **Esimene samm:** Saadetakse **privaatne meeldetuletus** ja küsitakse, kas kõik on korras.
+* **Teine samm:** Kui olukord jätkub, tõstatatakse küsimus **rühma koosolekus** ja otsitakse lahendust (rollide ümberjaotamine).
+* **Probleemi esitamine:** Püsiva kontakti puudumise korral informeeritakse juhendajat vahearuande raames.
+
+---
