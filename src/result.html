@@ -6,26 +6,25 @@
     <title>Prügi sorteerimise rakendus – Tulemus</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <h1>Tulemused</h1>
-    <p>Siin kuvatakse info selle kohta, kuhu ese tuleks panna.</p>
+    <h1>Tulemus</h1>
+    <p>Siin on info selle eseme sorteerimise kohta.</p>
 
     <table>
       <tr>
-        <th>Esem</th>
+        <th>Ese</th>
         <th>Kategooria</th>
         <th>Juhised</th>
       </tr>
-      <tr>
-        <td>Piimapakk</td>
-        <td>Pakend</td>
-        <td>Loputa ja pane kollasesse konteinerisse</td>
-      </tr>
+      <tbody id="result-body"></tbody>
     </table>
 
     <nav>
       <a href="index.html">Tagasi avalehele</a> |
       <a href="search.html">Otsi uuesti</a>
     </nav>
+
+    <script type="module" src="./js/result.js"></script>
   </body>
 </html>

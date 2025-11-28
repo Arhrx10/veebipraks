@@ -1,18 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f5f5f5;
-  color: #333;
+  background-image:url("./../../pildid/veebileht/BG1.png");
+  background-size: 1280px 680px;
+  background-position: top;
 }
 
 h1 {
   color: #2b6b2b;
-}
-
-nav a {
-  color: #2b6b2b;
-  text-decoration: none;
-  margin: 0 5px;
 }
 
 nav a:hover {
@@ -29,4 +27,71 @@ th,
 td {
   padding: 8px;
   border: 1px solid #ccc;
+}
+
+.pealkiri {
+  width: 100%;  
+  text-align: center;
+  background-color: #fdb5ff;   
+  border: 3px solid #d128a4;   
+  padding: 20px 0;             
+  margin: 0;                    
+  color: #d128a4;
+  font-family: "Itim";
+  font-size: 250%;
+  box-sizing: border-box;;       
+}
+
+.pealkiri-kast {
+  width: 800px;
+  text-align: center;
+  background-color: #fdb5ff;
+  border: 3px solid #d128a4;
+  padding: 15px 20px;          
+  border-radius: 0px;
+  color: #d128a4;
+  font-family: "Itim";
+  margin: 10px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icons {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+table, td, img {
+  border: none;
+}
+
+td {
+  text-align: center;
+  padding: 2px;
+}
+
+tr {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.otsi {
+  width: 800px;
+  text-align: center;
+  background-color: #fdb5ff;
+  border: 3px solid #d128a4;
+  padding: 15px 20px;          
+  border-radius: 0px;
+  color: #d128a4;
+  font-family: "Itim";
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 150%;
 }
