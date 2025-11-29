@@ -4,6 +4,8 @@ const resultBody = document.getElementById("result-body");
 
 const items = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
+const selectedContainers = localStorage.getItem("containers");
+
 const uniqueItems = [];
 const seen = new Set();
 localStorage.setItem("page", "result");
@@ -24,7 +26,7 @@ if (items.length === 0) {
   let html = "";
 
   items.forEach((item) => {
-    const fullItem = wasteDB.find(x => x.name === item.name);
+    const fullItem = wasteDB.find((x) => x.name === item.name);
 
     if (!fullItem) {
       html += `
@@ -37,20 +39,32 @@ if (items.length === 0) {
       html += `
         <tr>
           <td>
-            ${fullItem.image ? `<img src="${fullItem.image}" alt="${fullItem.name}" style="width:60px;height:60px;"><br>` : ""}
+            ${
+              fullItem.image
+                ? `<img src="${fullItem.image}" alt="${fullItem.name}" style="width:60px;height:60px;"><br>`
+                : ""
+            }
             <strong>${fullItem.name}</strong>
           </td>
 
           <td>
             ${fullItem.container}<br>
-            <span style="color:${containerColors[fullItem.container] || "black"};">
+            <span style="color:${
+              containerColors[fullItem.container] || "black"
+            };">
               ${containerColors[fullItem.container] || ""}
             </span>
           </td>
 
           <td>
             ${fullItem.instructions}
-            ${fullItem.keywords ? `<br><small>Märksõnad: ${fullItem.keywords.join(", ")}</small>` : ""}
+            ${
+              fullItem.keywords
+                ? `<br><small>Märksõnad: ${fullItem.keywords.join(
+                    ", "
+                  )}</small>`
+                : ""
+            }
           </td>
         </tr>
       `;
