@@ -6,22 +6,24 @@
     <title>Prügi sorteerimise rakendus – Otsing</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <h1 class="pealkiri">Otsi eset</h1>
-    <!-- <p>Siin saad sisestada eseme nime, et teada, kuidas seda sorteerida.</p> -->
 
-    <div class="search-wrapper">
+    <div class="search-page-wrapper">
+      <h1>Otsi eset</h1>
+      <p>Siin saad sisestada eseme nime, et teada, kuidas seda sorteerida.</p>
+
       <input id="search" placeholder="Otsi prügi..." />
-      <button id="search-btn" onclick="window.location.href='result.html'">
-        Otsi
-      </button>
+
+      <div id="suggestions"></div>
+
+      <!-- UUS NUpp -->
+      <button id="go-results">Näita tulemusi →</button>
+
+      <nav>
+        <a href="index.html">Tagasi avalehele</a>
+      </nav>
     </div>
-
-    <div id="suggestions"></div>
-
-    <nav>
-      <a href="index.html">Tagasi avalehele</a>
-    </nav>
 
     <script type="module" src="./js/search.js"></script>
   </body>
