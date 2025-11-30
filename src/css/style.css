@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
 }
@@ -11,10 +10,14 @@ body {
   background-attachment: fixed;
 }
 
+/* --- ÜLDINE --- */
 
 h1 {
   color: #2b6b2b;
+  font-family: "Itim";
 }
+
+/* --- AVALEHE PEALKIRJAD --- */
 
 .pealkiri {
   width: 100%;
@@ -40,105 +43,223 @@ h1 {
   margin: 10px auto 0 auto;
 }
 
+/* --- KONTEINERITE GRID AVALHELE --- */
 
+.icons-table {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  justify-content: center;
+  gap: 40px;
+  margin: 40px auto;
+  width: fit-content;
+}
+
+.container-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.25s;
+}
+
+.container-box.selected {
+  outline: 5px solid #d128a4;
+  border-radius: 10px;
+}
+
+.container-box:hover {
+  transform: scale(1.05);
+}
+
+/* Ikonid */
 .icons {
-  width: 250px;     /* PARANDATUD */
-  height: 250px;    /* PARANDATUD */
+  width: 250px;
+  height: 250px;
   display: block;
   margin: 0 auto;
   cursor: pointer;
 }
 
+/* --- NUPP “OTSI ESET” --- */
 
-table {
-  border-collapse: collapse;
-  margin-left: auto;    /* keskjoondus */
-  margin-right: auto;   /* keskjoondus */
-  margin-top: 20px;
-}
-
-tr {
-  text-align: center;
-}
-
-td {
-  padding: 20px;     /* parem spacing */
-  border: none;
-}
-
-
-.otsi {
-  width: 800px;
+#go-search, .otsi {
+  display: block;
+  width: 300px;
   text-align: center;
   background-color: #fdb5ff;
   border: 3px solid #d128a4;
+  border-radius: 8px;
   padding: 15px 20px;
-  color: #d128a4;
-  font-family: "Itim";
-  margin: 20px auto;
   font-size: 150%;
+  font-family: "Itim";
+  color: #d128a4;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin: 40px auto;
 }
 
-.suggestion,
-.no-suggestion {
-  border: 3px solid #d128a4;
-  width: 800px;
-  margin: 20px auto;
-  padding: 16px;
-  background: #fdb5ff;
-  border-radius: 8px;
-  cursor: pointer;
+#go-search:hover, .otsi:hover {
+  background-color: #d128a4;
+  color: white;
+}
 
+.otsi a {
+  color: #d128a4;
+  text-decoration: none;
+}
+
+/* --- OTSINGULEHT --- */
+
+.search-page-wrapper {
+  width: 800px;
+  margin: 40px auto;
+  background: #fdb5ff;
+  border: 3px solid #d128a4;
+  border-radius: 8px;
+  padding: 25px 30px;
+  font-family: "Itim";
+  color: #d128a4;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.search-page-wrapper h1 {
+  margin-top: 0;
+  font-size: 220%;
+}
+
+.search-page-wrapper p {
+  font-size: 120%;
+  margin-bottom: 20px;
+}
+
+#search {
+  width: 90%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  padding: 14px 18px;
+  font-size: 20px;
+  border: 3px solid #d128a4;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+}
+
+#search:focus {
+  border-color: #b2268a;
+  box-shadow: 0 0 6px rgba(209, 40, 164, 0.4);
+}
+
+/* Soovitused */
+
+#suggestions {
+  margin-top: 20px;
+}
+
+.suggestion, .no-suggestion {
+  border: 3px solid #d128a4;
+  background: #fdb5ff;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
   display: flex;
+  gap: 15px;
   align-items: center;
-  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.suggestion:hover {
+  background-color: #ffccff;
 }
 
 .suggestion-text {
   font-size: large;
 }
 
-.search-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
-}
+/* “Näita tulemusi” nupp */
 
-#search {
-  width: 700px;
-  padding: 12px 16px;
-  font-size: 18px;
-
-  border: 2px solid #ddd;
+#go-results {
+  width: 300px;
+  margin: 20px auto 0 auto;
+  display: block;
+  padding: 15px 20px;
+  background-color: #fdb5ff;
+  color: #d128a4;
+  font-family: "Itim";
+  font-size: 150%;
+  border: 3px solid #d128a4;
   border-radius: 8px;
-  outline: none;
-  transition: 0.2s ease;
-}
-
-#search:focus {
-  border-color: #888;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-}
-
-#search-btn {
-  padding: 12px 20px;
-  width: 80px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  background: #fdb5ff;
-  color: black;
   cursor: pointer;
   transition: 0.25s ease;
+}
 
+#go-results:hover {
+  background-color: #d128a4;
+  color: white;
+}
+
+/* --- TULEMUSTE LEHT --- */
+
+.result-wrapper {
+  width: 900px;
+  margin: 40px auto;
+  background: #fdb5ff;
   border: 3px solid #d128a4;
+  border-radius: 8px;
+  padding: 30px;
+  font-family: "Itim";
+  color: #d128a4;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-#search-btn:hover {
-  background: #d128a4;
+.result-wrapper h1 {
+  margin-top: 0;
+  font-size: 240%;
 }
 
-.selected {
-  border: solid;
+.result-wrapper p {
+  font-size: 120%;
+  margin-bottom: 30px;
+}
+
+/* iga eseme kast */
+
+.result-item {
+  background: white;
+  border: 3px solid #d128a4;
+  border-radius: 8px;
+  padding: 18px 20px;
+  text-align: left;
+  margin-bottom: 18px;
+  color: black;
+}
+
+.result-item strong {
+  font-size: 120%;
+  color: #d128a4;
+}
+
+.result-container-color {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* NAV */
+
+.result-nav {
+  margin-top: 25px;
+  font-size: 125%;
+}
+
+.result-nav a {
+  color: #d128a4;
+  text-decoration: none;
+}
+
+.result-nav a:hover {
+  text-decoration: underline;
 }
