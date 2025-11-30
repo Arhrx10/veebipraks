@@ -8,22 +8,19 @@
   </head>
 
   <body>
-    <h1>Tulemus</h1>
-    <p>Siin on info selle eseme sorteerimise kohta.</p>
 
-    <table>
-      <tr>
-        <th>Ese</th>
-        <th>Kategooria</th>
-        <th>Juhised</th>
-      </tr>
-      <tbody id="result-body"></tbody>
-    </table>
+    <div class="result-wrapper">
+      <h1>Tulemus</h1>
+      <p>Siin on info valitud esemete sorteerimise kohta.</p>
 
-    <nav>
-      <a href="index.html">Tagasi avalehele</a> |
-      <a href="search.html">Otsi uuesti</a>
-    </nav>
+      <!-- MITTE TABEL — JS TÄIDAB SELLE DIVI -->
+      <div id="result-list"></div>
+
+      <div class="result-nav">
+        <a href="index.html">Tagasi avalehele</a> |
+        <a href="search.html">Otsi uuesti</a>
+      </div>
+    </div>
 
     <script type="module" src="./js/result.js"></script>
   </body>
