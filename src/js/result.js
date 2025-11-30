@@ -1,27 +1,10 @@
 import { wasteDB, containerColors } from "./data.js";
 
-const resultBody = document.getElementById("result-body");
-
+const wrapper = document.getElementById("result-list");
 const items = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
-const selectedContainers = localStorage.getItem("containers");
-
-const uniqueItems = [];
-const seen = new Set();
-localStorage.setItem("page", "result");
-
-for (const i of items) {
-  if (!seen.has(i.name)) {
-    seen.add(i.name);
-    uniqueItems.push(i);
-  }
-}
-
 if (items.length === 0) {
-  resultBody.innerHTML = `
-    <tr>
-      <td colspan="3">Viga: ühtegi eset pole lisatud.</td>
-    </tr>`;
+  wrapper.innerHTML = `<p>Viga: ühtegi eset pole lisatud.</p>`;
 } else {
   let html = "";
 
@@ -30,46 +13,29 @@ if (items.length === 0) {
 
     if (!fullItem) {
       html += `
-        <tr>
-          <td>${item.name}</td>
-          <td colspan="3">Ese puudub andmebaasis.</td>
-        </tr>
+        <div class="result-item">
+          <strong>${item.name}</strong><br>
+          <em>Ese puudub andmebaasis.</em>
+        </div>
       `;
     } else {
       html += `
-        <tr>
-          <td>
-            ${
-              fullItem.image
-                ? `<img src="${fullItem.image}" alt="${fullItem.name}" style="width:60px;height:60px;"><br>`
-                : ""
-            }
-            <strong>${fullItem.name}</strong>
-          </td>
+        <div class="result-item">
+          <strong>${fullItem.name}</strong><br><br>
 
-          <td>
-            ${fullItem.container}<br>
-            <span style="color:${
-              containerColors[fullItem.container] || "black"
-            };">
-              ${containerColors[fullItem.container] || ""}
-            </span>
-          </td>
+          <b>Kategooria:</b>
+          <span class="result-container-color" style="color:${containerColors[fullItem.container]}">
+            ${fullItem.container}
+          </span><br><br>
 
-          <td>
-            ${fullItem.instructions}
-            ${
-              fullItem.keywords
-                ? `<br><small>Märksõnad: ${fullItem.keywords.join(
-                    ", "
-                  )}</small>`
-                : ""
-            }
-          </td>
-        </tr>
+          <b>Juhised:</b><br>
+          ${fullItem.instructions}<br><br>
+
+          <small><em>Märksõnad: ${fullItem.keywords.join(", ")}</em></small>
+        </div>
       `;
     }
   });
 
-  resultBody.innerHTML = html;
+  wrapper.innerHTML = html;
 }
