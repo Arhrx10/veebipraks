@@ -24,7 +24,7 @@ function showSuggestions(list) {
     const div = document.createElement("div");
     div.className = "suggestion";
 
-    const isSelected = selectedItems.some(x => x.name === item.name);
+    const isSelected = selectedItems.some((x) => x.name === item.name);
 
     div.innerHTML = `
       <span class="checkmark">${isSelected ? "✔️" : "⬜"}</span>
@@ -36,7 +36,7 @@ function showSuggestions(list) {
 
     // Toggle valitud olekut
     div.addEventListener("click", () => {
-      const index = selectedItems.findIndex(x => x.name === item.name);
+      const index = selectedItems.findIndex((x) => x.name === item.name);
 
       if (index === -1) {
         selectedItems.push(item);
@@ -53,14 +53,14 @@ function showSuggestions(list) {
   });
 }
 
-// ENTER → lisa ekraanil olevad tulemused
+// ENTER -> lisa valitud tulemused
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-      window.location.href = "result.html";
+    window.location.href = "result.html";
   }
 });
 
-// Input → näita soovitusi
+// Näitab soovitusi nupuvajutusel
 searchInput.addEventListener("input", (e) => {
   const query = e.target.value.trim();
   const matches = findMatches(query);
