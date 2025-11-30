@@ -10,10 +10,8 @@ body {
   background-attachment: fixed;
 }
 
-/* --- ÜLDINE --- */
-
 h1 {
-  color: #2b6b2b;
+  color: #d128a4;
   font-family: "Itim";
 }
 
@@ -43,7 +41,7 @@ h1 {
   margin: 10px auto 0 auto;
 }
 
-/* --- KONTEINERITE GRID AVALHELE --- */
+/* --- KONTEINERID AVALEHELE --- */
 
 .icons-table {
   display: grid;
@@ -72,7 +70,7 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Ikonid */
+/* Ikoonid */
 .icons {
   width: 250px;
   height: 250px;
@@ -226,7 +224,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* iga eseme kast */
+/* Iga eseme kast */
 
 .result-item {
   background: white;
@@ -262,4 +260,15 @@ h1 {
 
 .result-nav a:hover {
   text-decoration: underline;
+}
+
+.container-box.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.container-box.locked {
+  pointer-events: none; /* ei saa klikkida */
+  opacity: 0.6;         /* näeb välja nagu lukus */
+  cursor: default;      /* ei näita pointerit */
 }

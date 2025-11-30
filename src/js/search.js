@@ -14,10 +14,15 @@ const suggestionsBox = document.getElementById("suggestions");
 function findMatches(query) {
   const lower = query.toLowerCase();
 
-  return wasteDB.filter((item) =>
-    item.name.toLowerCase().includes(lower) &&
-    allowedContainers.includes(item.container)   // 🔥 Oluline filter!
-  );
+  return wasteDB
+    .filter((item) => item.name.toLowerCase().includes(lower))
+    .map(item => {
+      const container = allowedContainers.includes(item.container)
+        ? item.container
+        : "olme"; // 🔥 kui konteiner pole valitud → OLME
+
+      return { ...item, resolvedContainer: container };
+    });
 }
 
 // Kuvame soovitusi
@@ -39,7 +44,7 @@ function showSuggestions(list) {
       <span class="checkmark">${isSelected ? "✔️" : "⬜"}</span>
       <div class="suggestion-text">
         <strong>${item.name}</strong><br>
-        Kategooria: <em>${item.container}</em>
+        Kategooria: <em>${item.resolvedContainer}</em>
       </div>
     `;
 
@@ -48,7 +53,11 @@ function showSuggestions(list) {
       const index = selectedItems.findIndex((x) => x.name === item.name);
 
       if (index === -1) {
-        selectedItems.push(item);
+        selectedItems.push({
+          name: item.name,
+            container: item.resolvedContainer
+        });
+
         div.querySelector(".checkmark").textContent = "✔️";
       } else {
         selectedItems.splice(index, 1);

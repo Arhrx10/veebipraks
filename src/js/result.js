@@ -2,6 +2,7 @@ import { wasteDB, containerColors } from "./data.js";
 
 const wrapper = document.getElementById("result-list");
 const items = JSON.parse(localStorage.getItem("selectedItems")) || [];
+const allowedContainers = JSON.parse(localStorage.getItem("containers")) || ["olme"]; // lisa see rida
 
 if (items.length === 0) {
   wrapper.innerHTML = `<p>Viga: ühtegi eset pole lisatud.</p>`;
@@ -9,32 +10,36 @@ if (items.length === 0) {
   let html = "";
 
   items.forEach((item) => {
-    const fullItem = wasteDB.find((x) => x.name === item.name);
+    const foundItem = wasteDB.find(x => x.name === item.name);
 
-    if (!fullItem) {
+    if (!foundItem) {
       html += `
         <div class="result-item">
           <strong>${item.name}</strong><br>
           <em>Ese puudub andmebaasis.</em>
         </div>
       `;
-    } else {
-      html += `
-        <div class="result-item">
-          <strong>${fullItem.name}</strong><br><br>
-
-          <b>Kategooria:</b>
-          <span class="result-container-color" style="color:${containerColors[fullItem.container]}">
-            ${fullItem.container}
-          </span><br><br>
-
-          <b>Juhised:</b><br>
-          ${fullItem.instructions}<br><br>
-
-          <small><em>Märksõnad: ${fullItem.keywords.join(", ")}</em></small>
-        </div>
-      `;
+      return; // järgmine ese
     }
+
+    const container = allowedContainers.includes(foundItem.container) ? foundItem.container : "olme";
+    const instructions = container === foundItem.container ? foundItem.instructions : "Pane olmeprügisse.";
+
+    html += `
+      <div class="result-item">
+        <strong>${foundItem.name}</strong><br><br>
+
+        <b>Kategooria:</b>
+        <span class="result-container-color" style="color:${containerColors[container]}">
+          ${container}
+        </span><br><br>
+
+        <b>Juhised:</b><br>
+        ${instructions}<br><br>
+
+        <small><em>Märksõnad: ${foundItem.keywords.join(", ")}</em></small>
+      </div>
+    `;
   });
 
   wrapper.innerHTML = html;
