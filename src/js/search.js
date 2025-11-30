@@ -1,92 +1,51 @@
-import { wasteDB } from "./data.js";
+<!DOCTYPE html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prügi sorteerimise rakendus – Avaleht</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&display=swap" />
+  </head>
 
-// Loeme kasutaja valitud konteinerid avalehelt
-const allowedContainers = JSON.parse(localStorage.getItem("containers")) || [];
+  <body>
 
-// Puhastame varasemad valitud tulemused
-localStorage.removeItem("selectedItems");
-let selectedItems = [];
+    <h1 class="pealkiri">Mugav jäätmete sorteerimine</h1>
+    <h1 class="pealkiri-kast">Märgi, millised jäätmekonteinerid sul olemas on:</h1>
 
-const searchInput = document.getElementById("search");
-const suggestionsBox = document.getElementById("suggestions");
+    <div class="icons-table">
 
-// Leiame vasteid + FILTREERIME KONTEINERI ALUSEL
-function findMatches(query) {
-  const lower = query.toLowerCase();
-
-  return wasteDB.filter((item) =>
-    item.name.toLowerCase().includes(lower) &&
-    allowedContainers.includes(item.container)   // 🔥 Oluline filter!
-  );
-}
-
-// Kuvame soovitusi
-function showSuggestions(list) {
-  suggestionsBox.innerHTML = "";
-
-  if (list.length === 0) {
-    suggestionsBox.innerHTML = `<p>Ei leidnud vasteid või sobiv konteiner puudub.</p>`;
-    return;
-  }
-
-  list.forEach((item) => {
-    const div = document.createElement("div");
-    div.className = "suggestion";
-
-    const isSelected = selectedItems.some((x) => x.name === item.name);
-
-    div.innerHTML = `
-      <span class="checkmark">${isSelected ? "✔️" : "⬜"}</span>
-      <div class="suggestion-text">
-        <strong>${item.name}</strong><br>
-        Kategooria: <em>${item.container}</em>
+      <div class="container-box" data-type="klaas">
+        <img class="icons" src="./../../pildid/veebileht/klaaspakend.png" alt="klaaspakend" />
       </div>
-    `;
 
-    // Toggle valitud olekut
-    div.addEventListener("click", () => {
-      const index = selectedItems.findIndex((x) => x.name === item.name);
+      <div class="container-box" data-type="bio">
+        <img class="icons" src="./../../pildid/veebileht/biojaatmed.png" alt="biojäätmed" />
+      </div>
 
-      if (index === -1) {
-        selectedItems.push(item);
-        div.querySelector(".checkmark").textContent = "✔️";
-      } else {
-        selectedItems.splice(index, 1);
-        div.querySelector(".checkmark").textContent = "⬜";
-      }
+      <div class="container-box" data-type="paber">
+        <img class="icons" src="./../../pildid/veebileht/pappjapaber.png" alt="papp ja paber" />
+      </div>
 
-      localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
-    });
+      <div class="container-box" data-type="pakend">
+        <img class="icons" src="./../../pildid/veebileht/plastmetalljoogikartong.png" alt="plast-pakend" />
+      </div>
 
-    suggestionsBox.appendChild(div);
-  });
-}
+      <div class="container-box" data-type="vanapaber">
+        <img class="icons" src="./../../pildid/veebileht/vanapaber.png" alt="vanapaber" />
+      </div>
 
-// ENTER -> edasi tulemuste lehele
-searchInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    window.location.href = "result.html";
-  }
-});
+      <div class="container-box" data-type="olme">
+        <img class="icons" src="./../../pildid/veebileht/segaolme.png" alt="segaolme" />
+      </div>
 
-// Reaalajas otsing
-searchInput.addEventListener("input", (e) => {
-  const query = e.target.value.trim();
-  const matches = findMatches(query);
-  showSuggestions(matches);
-});
+    </div>
 
-// --------------------------
-// NUPP: “Näita tulemusi”
-// --------------------------
+    <!-- Nupp, mis töötab koos index.js scriptiga -->
+    <button id="go-search">Otsi eset</button>
 
-const goBtn = document.getElementById("go-results");
+    <!-- Õige script! -->
+    <script src="./js/index.js"></script>
 
-goBtn.addEventListener("click", () => {
-  if (selectedItems.length === 0) {
-    alert("Palun vali vähemalt üks ese, et näha tulemusi.");
-    return;
-  }
-
-  window.location.href = "result.html";
-});
+  </body>
+</html>
