@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Otsi eset</h1>
-    <p>Siin saad sisestada eseme nime, et teada, kuidas seda sorteerida.</p>
+    <h1 class="pealkiri">Otsi eset</h1>
+    <!-- <p>Siin saad sisestada eseme nime, et teada, kuidas seda sorteerida.</p> -->
 
-    <input id="search" placeholder="Otsi prügi..." />
+    <div class="search-wrapper">
+      <input id="search" placeholder="Otsi prügi..." />
+      <button id="search-btn" onclick="window.location.href='result.html'">
+        Otsi
+      </button>
+    </div>
 
     <div id="suggestions"></div>
 
