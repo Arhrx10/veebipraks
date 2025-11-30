@@ -11,24 +11,9 @@ body {
   background-attachment: fixed;
 }
 
+
 h1 {
   color: #2b6b2b;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 10px;
-}
-
-th,
-td {
-  padding: 8px;
-  border: 1px solid #ccc;
 }
 
 .pealkiri {
@@ -50,21 +35,48 @@ td {
   background-color: #fdb5ff;
   border: 3px solid #d128a4;
   padding: 15px 20px;
-  border-radius: 0px;
   color: #d128a4;
   font-family: "Itim";
   margin: 10px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
 }
 
+
 .icons {
-  width: 200px;
-  height: 200px;
+  width: 250px;     /* PARANDATUD */
+  height: 250px;    /* PARANDATUD */
+  display: block;
   margin: 0 auto;
   cursor: pointer;
+}
+
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;    /* keskjoondus */
+  margin-right: auto;   /* keskjoondus */
+  margin-top: 20px;
+}
+
+tr {
+  text-align: center;
+}
+
+td {
+  padding: 20px;     /* parem spacing */
+  border: none;
+}
+
+
+.otsi {
+  width: 800px;
+  text-align: center;
+  background-color: #fdb5ff;
+  border: 3px solid #d128a4;
+  padding: 15px 20px;
+  color: #d128a4;
+  font-family: "Itim";
+  margin: 20px auto;
+  font-size: 150%;
 }
 
 .suggestion,
@@ -121,45 +133,10 @@ td {
   transition: 0.25s ease;
 
   border: 3px solid #d128a4;
-  border-radius: 8px;
 }
 
 #search-btn:hover {
   background: #d128a4;
-}
-
-table,
-td,
-img {
-  border: none;
-}
-
-td {
-  text-align: center;
-  padding: 2px;
-}
-
-tr {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-}
-
-.otsi {
-  width: 800px;
-  text-align: center;
-  background-color: #fdb5ff;
-  border: 3px solid #d128a4;
-  padding: 15px 20px;
-  border-radius: 0px;
-  color: #d128a4;
-  font-family: "Itim";
-  margin: 0 auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 150%;
 }
 
 .selected {
