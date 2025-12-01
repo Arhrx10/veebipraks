@@ -1,10 +1,11 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-image: url("./../pildid/veebileht/BG1.png");
+  background-image: url("./../../pildid/veebileht/BG1.png");
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
@@ -81,7 +82,8 @@ h1 {
 
 /* --- NUPP “OTSI ESET” --- */
 
-#go-search, .otsi {
+#go-search,
+.otsi {
   display: block;
   width: 300px;
   text-align: center;
@@ -97,7 +99,8 @@ h1 {
   margin: 40px auto;
 }
 
-#go-search:hover, .otsi:hover {
+#go-search:hover,
+.otsi:hover {
   background-color: #d128a4;
   color: white;
 }
@@ -156,7 +159,8 @@ h1 {
   margin-top: 20px;
 }
 
-.suggestion, .no-suggestion {
+.suggestion,
+.no-suggestion {
   border: 3px solid #d128a4;
   background: #fdb5ff;
   width: 100%;
@@ -269,6 +273,6 @@ h1 {
 
 .container-box.locked {
   pointer-events: none; /* ei saa klikkida */
-  opacity: 0.6;         /* näeb välja nagu lukus */
-  cursor: default;      /* ei näita pointerit */
+  opacity: 0.6; /* näeb välja nagu lukus */
+  cursor: default; /* ei näita pointerit */
 }
