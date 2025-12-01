@@ -19,7 +19,7 @@ function findMatches(query) {
     .map(item => {
       const container = allowedContainers.includes(item.container)
         ? item.container
-        : "olme"; // 🔥 kui konteiner pole valitud → OLME
+        : "olme"; // kui konteiner pole valitud → OLME
 
       return { ...item, resolvedContainer: container };
     });
@@ -71,7 +71,7 @@ function showSuggestions(list) {
   });
 }
 
-// ENTER -> edasi tulemuste lehele
+// ENTER viib edasi tulemuste lehele
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     window.location.href = "result.html";
@@ -99,3 +99,6 @@ goBtn.addEventListener("click", () => {
 
   window.location.href = "result.html";
 });
+
+// Andreas Rey Hõimi ja Orm Saaresalu poolt tehtud
+// Koodi parandused teinud Rickie.

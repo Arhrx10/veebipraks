@@ -14,6 +14,7 @@ export const containerColors = {
   bio: "pruun",
 };
 
+// Jäätmeliikide andmebaas otsinguks ja tulemuste näitamiseks
 export const wasteDB = [
   {
     name: "plastpudel",
@@ -184,3 +185,4 @@ export const wasteDB = [
     image: "",
   },
 ];
+// Orm Saaresalu poolt tehtud
