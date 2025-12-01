@@ -65,6 +65,7 @@ if (items.length === 0) {
 
   wrapper.innerHTML = html;
 }
+// Andreas Rey Hõimi poolt tehtud, Orm Saaresalu parandas
 
 // Andreas Rey Hõimi poolt tehtud, Orm Saaresalu parandas
 // Edasised parandused teinud Rickie.
