@@ -16,10 +16,10 @@ function findMatches(query) {
 
   return wasteDB
     .filter((item) => item.name.toLowerCase().includes(lower))
-    .map(item => {
+    .map((item) => {
       const container = allowedContainers.includes(item.container)
         ? item.container
-        : "olme"; // kui konteiner pole valitud → OLME
+        : "olme"; // kui konteiner pole valitud -> OLME
 
       return { ...item, resolvedContainer: container };
     });
@@ -55,7 +55,7 @@ function showSuggestions(list) {
       if (index === -1) {
         selectedItems.push({
           name: item.name,
-            container: item.resolvedContainer
+          container: item.resolvedContainer,
         });
 
         div.querySelector(".checkmark").textContent = "✔️";
@@ -85,10 +85,7 @@ searchInput.addEventListener("input", (e) => {
   showSuggestions(matches);
 });
 
-// --------------------------
 // NUPP: “Näita tulemusi”
-// --------------------------
-
 const goBtn = document.getElementById("go-results");
 
 goBtn.addEventListener("click", () => {
