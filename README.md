@@ -18,8 +18,6 @@ Cookies?
 
 Mitu sorteerimis(kotti?) vms sul on. 
 
-Kui 1, siis automaatselt olme
-
-Kui > 1, siis lisab tähtsuse järjestuse järgi. (olme, pakend, bio jne)
+(Automaatselt olme on olemas)
 
 Märkus - Kindlasti sorteeri patareid ja akud jne eraldi! (punasega?)
