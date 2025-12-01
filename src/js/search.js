@@ -99,3 +99,4 @@ goBtn.addEventListener("click", () => {
 
   window.location.href = "result.html";
 });
+// Andreas Rey Hõimi ja Orm Saaresalu poolt tehtud
