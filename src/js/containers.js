@@ -21,3 +21,4 @@ document.querySelectorAll(".icons").forEach((cell) => {
     console.log(localStorage.getItem("containers"));
   });
 });
+// Andreas Rey Hõim poolt tehtud
