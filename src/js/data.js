@@ -98,7 +98,7 @@ export const wasteDB = [
     instructions: "Eemalda kork ja pane rohelisse klaasikonteinerisse.",
     keywords: ["pudel", "klaas", "jook"],
     image: "",
-  },
+  }, // Andreas Rey Hõim poolt tehtud
   {
     name: "klaaspurk",
     container: "klaas",
@@ -184,3 +184,4 @@ export const wasteDB = [
     image: "",
   },
 ];
+// Orm Saaresalu poolt tehtud
