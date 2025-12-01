@@ -44,3 +44,4 @@ if (items.length === 0) {
 
   wrapper.innerHTML = html;
 }
+// Andreas Rey Hõimi poolt tehtud, Orm Saaresalu parandas
